@@ -11,7 +11,7 @@ def weather(request):
     API_key = '3bc15af9a0d73083998225ddcac9f79f'
     owm = OWM(API_key)
     mgr = owm.weather_manager()
-    obs = mgr.weather_at_place('London,GB')      
+    obs = mgr.weather_at_place('Seoul,KR')      
     w = obs.weather
     # print(w)
     res = w.status 
@@ -19,7 +19,7 @@ def weather(request):
     res1 = w.detailed_status
     # print(res1) # moderate/light rain
 
-    weather = SaveWeather(weather_info=res, weather_loc='London,GB')
+    weather = SaveWeather(weather_info=res, weather_loc='Seoul,KR')
     weather.save()
 
     # location.save()
